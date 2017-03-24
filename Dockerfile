@@ -8,5 +8,10 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+    
+VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
-RUN /bin/echo 'done'   
+EXPOSE 80
+EXPOSE 443
+
+CMD ["nginx -t"]
