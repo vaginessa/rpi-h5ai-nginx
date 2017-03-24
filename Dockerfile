@@ -14,4 +14,4 @@ VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/v
 EXPOSE 80
 EXPOSE 443
 
-CMD ["nginx -t"]
+CMD ["nginx"]
