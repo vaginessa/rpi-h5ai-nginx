@@ -11,7 +11,8 @@ RUN apt-get update && \
     
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
-EXPOSE 80
-EXPOSE 443
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80 443
 
 CMD ["nginx"]
