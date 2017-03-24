@@ -10,6 +10,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
     
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
+
+RUN  touch /var/run/php5-fpm.sock && \ 
+     chmod 777 /var/run/php5-fpm.sock
+
 RUN service php5-fpm start
 COPY nginx.conf /etc/nginx/nginx.conf
 
